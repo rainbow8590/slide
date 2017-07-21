@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#wrap{
+			width: 790px;
+			height: 340px;
+			margin: 50px auto;
+			overflow: hidden;
+			position: relative;
+		}
+		ul{
+			list-style: none;
+			overflow: hidden;
+			width: 600%;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		ul li{
+			float: left;
+			width: 790px;
+			height: 340px;
+		}
+		#wrap .arrow-left,#wrap .arrow-right{
+			position: absolute;
+			left:0;
+			top: 50%;
+			margin-top: -30px;
+			width: 30px;
+			height: 60px;
+			background: rgba(255,255,255,.5);
+			text-align: center;
+			color: #fff;
+			line-height: 60px;
+			text-decoration: none;
+			font-size: 30px;
+		}
+		#wrap .arrow-right{
+			left: auto;
+			right: 0;
+		}
+		#wrap ol {
+			position: absolute;
+			left: 50%;
+			margin-left: -65px;
+			bottom: 15px;
+			list-style: none;
+		}
+		#wrap ol li{
+			width: 12px;
+			height: 12px;
+			background: #fff;
+			margin-left: 14px;
+			float: left;
+			border-radius: 50%;
+		}
+		#wrap ol li.current{
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div class="imgwrap">
+			<ul>
+				<li><a href="#"><img src="images/slide-1.jpg" alt=""></a></li>
+				<li><a href="#"><img src="images/slide-2.jpg" alt=""></a></li>
+				<li><a href="#"><img src="images/slide-3.jpg" alt=""></a></li>
+				<li><a href="#"><img src="images/slide-4.jpg" alt=""></a></li>
+				<li><a href="#"><img src="images/slide-5.jpg" alt=""></a></li>
+			</ul>
+		</div>
+		<a href="javascript:;" id="left" class="arrow-left"><</a>
+		<a href="javascript:;" id="right" class="arrow-right">></a>
+		<ol id='ol'>
+			<li class="current"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ol>
+	</div>
+	<script src="jquery.min.js"></script>
+	<script src="jQuery.slide.js"></script>
+	<script>
+	$(function(){
+		$('#wrap').slide({
+			"rightArrow":"#right",
+			"leftArrow":"#left",
+			"dotCur":"current",
+		})
+	});
+
+
+	</script>
+	
+</body>
+</html>
